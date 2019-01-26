@@ -1,0 +1,39 @@
+import argparse
+import cv2
+
+ap = argparse.ArgumentParser()
+ap.add_argument('-s', '--show', required=False, action='store_true', help='Show output')
+ap.add_argument('-i', '--image', required=True, help='Input: image file path')
+ap.add_argument('-o', '--output', required=False, help='Output: tactile image file path')
+args = ap.parse_args()
+
+# Read image
+image = cv2.imread(args.image)
+
+# Fine-grained saliency detection from
+# Sebastian Montabone and Alvaro Soto.
+# Human detection using a mobile platform and novel features derived from a visual saliency mechanism.
+# In Image and Vision Computing, Vol. 28 Issue 3, pages 391–402. Elsevier, 2010.
+# See https://docs.opencv.org/3.2.0/da/dd0/classcv_1_1saliency_1_1StaticSaliencyFineGrained.html
+fine_saliency = cv2.saliency.StaticSaliencyFineGrained_create()
+_, fine_saliency_map = fine_saliency.computeSaliency(image)
+
+# Scale the values to [0, 255]
+fine_saliency_map = (fine_saliency_map * 255).astype('uint8')
+
+# Compute binary threshold map
+threshold_map = cv2.threshold(
+    fine_saliency_map.astype('uint8'), 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+
+# Invert the binary threshold map so it is Swell Paper Tactile Printer friendly
+inverse_threshold_map = cv2.bitwise_not(threshold_map)
+
+# Save output
+cv2.imwrite(args.output, inverse_threshold_map)
+
+if args.show:
+    # Show output
+    cv2.imshow('Inverse Threshold Map', inverse_threshold_map)
+
+    # Press any key to exit
+    cv2.waitKey(0)
