@@ -3,6 +3,7 @@ import cv2
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-s', '--show', required=False, action='store_true', help='Show output')
+ap.add_argument('-f', '--fine', required=False, action='store_true', help='Fine-grained salient only mode')
 ap.add_argument('-i', '--image', required=True, help='Input: image file path')
 ap.add_argument('-o', '--output', required=False, help='Output: tactile image file path')
 args = ap.parse_args()
@@ -28,12 +29,17 @@ threshold_map = cv2.threshold(
 # Invert the binary threshold map so it is Swell Paper Tactile Printer friendly
 inverse_threshold_map = cv2.bitwise_not(threshold_map)
 
+if args.fine:
+    selected_map = fine_saliency_map
+else:
+    selected_map = inverse_threshold_map
+
 # Save output
-cv2.imwrite(args.output, inverse_threshold_map)
+cv2.imwrite(args.output, selected_map)
 
 if args.show:
     # Show output
-    cv2.imshow('Inverse Threshold Map', inverse_threshold_map)
+    cv2.imshow('Inverse Threshold Map', selected_map)
 
     # Press any key to exit
     cv2.waitKey(0)
