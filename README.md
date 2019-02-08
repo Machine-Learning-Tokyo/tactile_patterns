@@ -9,6 +9,7 @@ This project is done as part of the [Machine Learning Tokyo](https://machinelear
 * https://commons.wikimedia.org/wiki/File:Tokyo_Skytree_2014_%E2%85%A2.jpg
 * https://www.jinjyagoshuin.com/entry/wakabayashiinari
 * http://www.studio-mario.jp/event/family/
+* https://sj-photograph.com/%E6%9D%B1%E4%BA%AC%E3%81%AE%E5%85%AC%E5%9C%92%E3%81%A7%E7%A7%8B%E3%81%AB%E5%AE%B6%E6%97%8F%E3%81%A7%E6%92%AE%E5%BD%B1%E3%81%97%E3%81%9F%E3%81%84%E8%8A%B1%E3%82%84%E7%B4%85%E8%91%89%EF%BD%9C%E8%87%AA/
 
 ## References
 * [Tactile Images Give Visually Impaired Access To Earth From The Air](https://www.culture24.org.uk/sector-info/art17622).
