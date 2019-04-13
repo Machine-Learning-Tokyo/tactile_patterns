@@ -1,7 +1,25 @@
 # Photo to Tactile Image Converter
 The goal of this project is to convert photo to [Tactile Image](https://en.wikipedia.org/wiki/Tactile_graphic) that can be printed with Tactile Printer on Swell Paper to assist visually impaired person in seeing the photo.
 
-This project is done as part of the [Machine Learning Tokyo](https://machinelearningtokyo.com/) activities that is AI for social good.
+This project is done as part of the [Machine Learning Tokyo](https://machinelearningtokyo.com/) activities that is AI for Social Good.
+
+## Example: Input image and output patterns
+
+<p align="center">
+  <img src="https://github.com/Machine-Learning-Tokyo/tactile_patterns/blob/master/photos/Tokyo-Tower-2-1024x683.jpg" width="600">
+</p>
+
+<p align="center">
+  <img src="https://github.com/Machine-Learning-Tokyo/tactile_patterns/blob/master/output/tokyo_tower.png" width="600">
+</p>
+
+
+## After thermo-printing: Blind people are testing the tactile patterns representing the original image
+<p align="center">
+  <img src="https://github.com/Machine-Learning-Tokyo/tactile_patterns/blob/master/tactile_patterns.jpg" width="600">
+</p>
+
+
 
 ## Photo Credits
 * Jessica A Paje, https://en.japantravel.com/tokyo/tokyo-station-celebrates-100-years/17770.
