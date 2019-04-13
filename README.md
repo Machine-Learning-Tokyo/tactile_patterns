@@ -14,7 +14,9 @@ This project is done as part of the [Machine Learning Tokyo](https://machinelear
 </p>
 
 
-## After thermo-printing: Blind people are testing the tactile patterns representing the original image
+## After thermo-printing
+Blind people are testing the tactile patterns representing the original image.
+
 <p align="center">
   <img src="https://github.com/Machine-Learning-Tokyo/tactile_patterns/blob/master/tactile_patterns.jpg" width="600">
 </p>
