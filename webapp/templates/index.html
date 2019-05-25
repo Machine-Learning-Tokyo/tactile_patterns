@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ _("Tactile Patterns") }} | MLT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap-theme.min.css') }}">
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-light w-100"><a class="navbar-brand" href="#">{{ _("Tactile Patterns") }}</a>
+        <div class="d-flex align-items-center">
+          <div class="mr-3">
+            {% if session["lang"] == "en" %}
+            <a href="/lang/en">English</a>
+            <small class="px-2 text-muted">/</small>
+            <a class="text-muted" href="/lang/ja">日本語</a>
+            {% elif session["lang"] == "ja" %}
+            <a class="text-muted" href="/lang/en">English</a>
+            <small class="px-2 text-muted">/</small>
+            <a href="/lang/ja">日本語</a>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+      <section class="py-5">
+        <div class="container">
+          <form method="POST" action="/" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <div class="form-group">
+              <label>{{ _("Scenery Image") }}</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="photo" name="photo" required="">
+                <label class="custom-file-label" for="photo">{{ _("Choose File") }}</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">{{ _("Convert") }}</button>
+          </form>
+        </div>
+      </section>
+      {% if output %}
+      <section class="py-2">
+        <div class="container text-center">
+          <a class="btn btn-primary" download="{{ filename }}{{ file_ext }}" href="data:;base64,{{ output }}" role="button">
+            {{ _("Download") }}
+          </a>
+        </div>
+      </section>
+      <section class="py-2">
+        <div class="container text-center">
+          <img src="data:;base64,{{ output }}" class="img-thumbnail" download>
+        </div>
+      </section>
+      {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+    <script>
+      $('.custom-file-input').on('change',function(){
+        var uploadedFileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass('selected').html(uploadedFileName);
+      });
+    </script>
+  </body>
+</html>

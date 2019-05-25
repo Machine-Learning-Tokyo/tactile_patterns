@@ -1,4 +1,9 @@
+__pycache__
 .DS_Store
 .idea
 private_output
 private_photos
+
+# Translations
+*.mo
+*.pot
