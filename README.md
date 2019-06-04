@@ -1,5 +1,10 @@
 # Photo to Tactile Image Converter
-This is a collaborative project between MLT (Suzana Ilic, John Lau) and Prof. Tune Kamae, a former physics professor (University of Tokyo, Stanford University) who has been engaged for years in supporting and teaching visually impaired and blind people. MLT is supporting his efforts.
+This is a collaborative project between MLT (Suzana Ilic, John Lau) and Prof. Tune Kamae, a former physics professor (University of Tokyo, Stanford University) who has been engaged for years in supporting, teaching and creating learning resources for visually impaired and blind people. MLT is supporting his efforts.
+
+<p align="center">
+  <img src="https://github.com/Machine-Learning-Tokyo/tactile_patterns/blob/master/learning_resources.jpg" width="500">
+</p>
+
 
 The goal of this project is to convert photo to [Tactile Image](https://en.wikipedia.org/wiki/Tactile_graphic) that can be printed with Tactile Printer on Swell Paper to assist visually impaired person in seeing the photo.
 
