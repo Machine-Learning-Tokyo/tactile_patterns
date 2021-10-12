@@ -8,7 +8,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 numpy==1.16.0
-opencv-contrib-python==4.0.0.21
+opencv-contrib-python==4.2.0.32
 pytz==2019.1
 Werkzeug==0.15.4
 WTForms==2.2.1
